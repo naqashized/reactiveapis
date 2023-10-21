@@ -1,0 +1,17 @@
+version: "3.8"
+
+volumes:
+  postgres_data:
+
+services:
+    postgres:
+      image: postgres:14.1-alpine
+      container_name: reactiveapis-pgsql
+      restart: always
+      volumes:
+        - postgres_data:/home/Documents/data
+      environment:
+        - POSTGRES_USER=test
+        - POSTGRES_PASSWORD=test
+      ports:
+        - 5439:5432
