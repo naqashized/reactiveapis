@@ -1,0 +1,23 @@
+logging:
+  level:
+    io.r2dbc.postgresql: DEBUG
+    io.r2dbc.postgresql.QUERY: DEBUG
+    io.r2dbc.postgresql.PARAM: DEBUG
+  pattern:
+    level: "%5p %X{}"
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health,info,metrics,prometheus
+  httpexchanges:
+    recording:
+      enabled: false
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: "/api/docs"
